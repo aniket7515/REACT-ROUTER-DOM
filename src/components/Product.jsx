@@ -21,3 +21,4 @@ const Product = () => {
 
 export default Product
 
+// Relative links do not start with the forward slash

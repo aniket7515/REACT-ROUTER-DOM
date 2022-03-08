@@ -6,7 +6,7 @@ import './App.css';
 
 
 
-
+import {AuthProvider} from './components/auth'
 import FeaturedProduct from './components/FeaturedProduct';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
@@ -17,13 +17,15 @@ import Product from './components/Product';
 import UserDetails from './components/UserDetails';
 import Users from './components/Users';
 import Admin from './components/Admin';
+import Profile from './components/Profile';
+import Login from './components/Login';
 
 // import About from './components/About';
 const LazyAbout= React.lazy(()=> import('./components/About'))
 
 function App() {
   return (
-    <>
+    <AuthProvider>
     <Navbar/>
 
 
@@ -55,11 +57,13 @@ function App() {
 
       {/* <Route path="users/2" element={<UserDetails/>}/>
       <Route path="users/3" element={<UserDetails/>}/> */}
+      <Route path="profile" element={<Profile/>} />
+      <Route path="login" element={<Login/>}/>
       <Route path="*" element={<NoMatch/>}></Route>
     </Routes>
 
 
-    </>
+    </AuthProvider>
    
  
   );
